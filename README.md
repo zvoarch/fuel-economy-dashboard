@@ -2,7 +2,7 @@
 
 An interactive Streamlit app that explores U.S. fuel economy data from the EPA, from 1984 to today. It shows how engine size affects efficiency and cost, how MPG has changed over the years, and which vehicles are the most and least efficient.
 
-**Live app:** _add your Streamlit Community Cloud link here_
+**Live app:** https://fuel-economy-dashboard.streamlit.app/
 
 ## Dataset
 
