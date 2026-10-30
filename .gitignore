@@ -218,3 +218,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# PyCharm settings
+.idea/
+
+# Raw EPA download (only needed to rebuild the clean CSV)
+data/raw/
