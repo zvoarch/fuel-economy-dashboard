@@ -6,7 +6,7 @@ An interactive Streamlit app that explores U.S. fuel economy data from the EPA, 
 
 ## Dataset
 
-- **Source:** [EPA Fuel Economy Data](https://www.fueleconomy.gov/feg/download.shtml) (`vehicles.csv`), public domain
+- **Source:** [EPA Fuel Economy Data](https://www.fueleconomy.gov/feg/download.shtml) (`vehicles.csv`), public domain, downloaded October 2026
 - **File used by the app:** `data/vehicles_clean.csv`, 50,363 vehicles (one row per model, year and engine configuration)
 - **Columns:** make, model, year, cylinders, fuel type, technology type, combined MPG, yearly fuel cost
 - **Cleaning** (done by `clean_data.py`):
@@ -22,7 +22,7 @@ An interactive Streamlit app that explores U.S. fuel economy data from the EPA, 
 
 The top of the page shows the total number of vehicles, the average MPG and the average yearly fuel cost. Below that are five tabs:
 
-- **Engine & Fuel:** average MPG or yearly fuel cost by number of cylinders. Use the radio buttons to switch between the two.
+- **Engines:** average MPG or yearly fuel cost by number of cylinders. Use the radio buttons to switch between the two.
 - **Trends:** average MPG by model year. Pick one or more makes to compare them, or leave it empty to see all vehicles.
 - **Rankings:** the 10 most or least efficient vehicles. Use the radio buttons to switch.
 - **Insights:** key findings from the data and its limitations.

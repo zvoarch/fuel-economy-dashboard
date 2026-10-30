@@ -109,12 +109,12 @@ col3.metric("Avg Yearly Fuel Cost", f"${df['fuelCost08'].mean():,.0f}")
 
 st.divider()
 
-engine_fuel, trends, rankings, insights, data = st.tabs(["Engine & Fuel", "Trends", "Rankings", "Insights", "Data"])
+engines, trends, rankings, insights, data = st.tabs(["Engines", "Trends", "Rankings", "Insights", "Data"])
 
 
-# Engine & Fuel tab: average MPG or fuel cost by cylinders
-with engine_fuel:
-    st.subheader("Engine & Fuel Types")
+# Engines tab: average MPG or fuel cost by cylinders
+with engines:
+    st.subheader("Engine Size & Efficiency")
     st.markdown("Engines have a big effect on efficiency and costs. This chart shows how much.")
 
     choice = st.radio("Show", ["Combined MPG", "Yearly Fuel Cost"], horizontal=True, key="ef_choice")
@@ -155,7 +155,7 @@ with rankings:
 with insights:
     st.subheader("Key findings")
 
-    gas = df[df["fuelType1"] != "Electricity"]
+    non_ev = df[df["fuelType1"] != "Electricity"]
     ev = df[df["fuelType1"] == "Electricity"]
     four_cyl = df.loc[df["cylinders"] == 4, "comb08"].mean()
     eight_cyl = df.loc[df["cylinders"] == 8, "comb08"].mean()
@@ -163,10 +163,10 @@ with insights:
     st.markdown(
         f"- **Fewer cylinders, better MPG.** 4-cylinder cars average {four_cyl:.1f} MPG, "
         f"8-cylinder cars only {eight_cyl:.1f}.\n"
-        f"- **Gas cars vary a lot.** Non-electric vehicles range from {gas['comb08'].min()} "
-        f"to {gas['comb08'].max()} MPG.\n"
+        f"- **Non-electric cars vary a lot.** They range from {non_ev['comb08'].min()} "
+        f"to {non_ev['comb08'].max()} MPG.\n"
         f"- **EVs are in another league.** Electric vehicles average {ev['comb08'].mean():.0f} MPGe, "
-        f"compared to {gas['comb08'].mean():.1f} MPG for everything else."
+        f"compared to {non_ev['comb08'].mean():.1f} MPG for everything else."
     )
 
     st.markdown("#### Limitations")
